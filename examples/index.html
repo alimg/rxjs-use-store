@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rxjs-use-store</title>
+    <style>
+      html {
+        background: #f0f0f0;
+      }
+      html, body, #root {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      .content {
+        background: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0 auto;
+        border-left: 1px solid #aaa;
+        border-right: 1px solid #aaa;
+        width: max-content;
+        min-height: 100%;
+        max-width: 100%;
+        padding: 10%;
+        box-sizing: border-box;
+      }
+      .valid {
+        color: rgb(0, 80, 172);
+      }
+      .invalid {
+        color: rgb(196, 0, 0);
+      }
+      .corvid-picker ol {
+        width: max-content;
+      }
+      .corvid-picker li {
+        cursor: pointer;
+      }
+      .corvid-picker li:hover {
+        background-color: #aaa;
+      }
+      .in-progress::after {
+        display: inline-block;
+        content: "";
+        border: 8px solid #ccc; /* Light grey */
+        border-top: 8px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        margin: -10px 4px;
+        animation: spin 0.5s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

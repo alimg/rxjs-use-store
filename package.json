@@ -1,0 +1,49 @@
+{
+  "name": "rxjs-use-store",
+  "version": "0.1.0",
+  "description": "RxJS store pattern with React hooks",
+  "author": "Alim Gokkaya <alim.gokkaya@gmail.com>",
+  "license": "MIT",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
+  "typings": "dist/cjs/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "rm -rf dist/esm && tsc -p tsconfig.json --module es2015 --target es5 --outDir dist/esm",
+    "build:cjs": "rm -rf dist/cjs && tsc -p tsconfig.json --module commonjs --target es5 --outDir dist/cjs",
+    "start": "webpack serve -c ./examples/webpack.config.js --progress --color",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "rxjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "@types/moment": "^2.13.0",
+    "@types/moment-duration-format": "^2.2.2",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-test-renderer": "^17.0.1",
+    "@types/sinon": "^10.0.0",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^26.6.3",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-test-renderer": "^17.0.2",
+    "rxjs": "^7.0.0",
+    "sinon": "^10.0.0",
+    "ts-jest": "^26.5.5",
+    "ts-loader": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "tslib": "^2.2.0",
+    "use-constant": "^1.1.0"
+  }
+}
