@@ -2,6 +2,7 @@
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 ![npm](https://img.shields.io/npm/v/rxjs-use-store)
+[![codecov](https://codecov.io/gh/alimg/rxjs-use-store/branch/main/graph/badge.svg?token=TR1SOKL2X6)](https://codecov.io/gh/alimg/rxjs-use-store)
 
 A lightweight state management library for React powered by RxJS, featuring a concise type-safe interface.
 
@@ -130,20 +131,22 @@ function StopWatch() {
 ## Library Documentation
 
 ### Store
-
+...
 #### initialState
-
+...
 #### Actions
-
+...
 #### `inputAction` - Reacting to dependent prop changes
-
+...
 #### `outputAction` - Reacting to all store updates
-
+...
 ### `useStore`
 
 rxjs-use-store is inspired by the [rxjs-hooks](https://github.com/LeetCode-OpenSource/rxjs-hooks) library. Likewise, `useStore` utilizes the `use-constant` package under the hood to bind RxJS Subjects into the React component nodes.
 
 #### Callbacks
+
+...
 
 ### `makeStore(initialState, actions, [options])`
 
@@ -151,4 +154,4 @@ This is a convenience function to build your store objects. It helps Typescript 
 
 ## Contributing/Hacking
 
-If you cloned the repository, you can run examples via `yarn start`.
+If you already cloned the repository, you can run examples via `yarn start`.

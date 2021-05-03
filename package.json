@@ -13,7 +13,8 @@
     "build:esm": "rm -rf dist/esm && tsc -p tsconfig.json --module es2015 --target es5 --outDir dist/esm",
     "build:cjs": "rm -rf dist/cjs && tsc -p tsconfig.json --module commonjs --target es5 --outDir dist/cjs",
     "start": "webpack serve -c ./examples/webpack.config.js --progress --color",
-    "test": "jest"
+    "test": "jest",
+    "test-ci": "NODE_ENV=test jest --no-cache --ci"
   },
   "peerDependencies": {
     "react": "^17.0.2",
