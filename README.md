@@ -24,8 +24,8 @@ Get it from NPM with your favorite package manager.
 A minimal store is defined by an `initialState` and a map of `actions`. When the `useStore` hook is called for the first time, the state and callbacks are composed from the given actions.
 
 ```tsx
-function MyComponent(props: {speed?: number, text: string}) {
-  type MyState = {angle: number, step?: number}
+function MyComponent() {
+  type MyState = {myValue: number}
   type AnAction = [number]
   interface MyActions extends ActionsType<MyState> {
     anEffect($: Observable<AnAction>): Observable<((state: MyState) => MyState)>
@@ -34,16 +34,13 @@ function MyComponent(props: {speed?: number, text: string}) {
     initialState: {myValue: 1}, 
     actions: {
       anEffect: $ => $.pipe(map((([newValue]) => state => ({myValue: newValue}))))
-    },
-    inputAction: $ => $.pipe(map((([step]) => state => ({...state, step})))),
-    outputAction: $ => $.pipe(switchMapTo(interval(1000).pipe(
-      mapTo((state) => ({myValue: state.myValue + 1})))))
-  }, [props.step])
-  return <button 
-    onClick={() => anEffect(Math.sin(state.myValue))} 
-    style={transform: `rotate(${state.angle}deg)`}>{props.text}</button>
+    }
+  })
+  return <button onClick={() => anEffect(state.myValue * 2)}>{state.myValue}</button>
 }
 ```
+[See the demo.](https://codesandbox.io/s/elastic-blackburn-upj7q?file=/src/App.tsx)
+
 
 Each member of `actions` is a factory function that defines the RxJS plumbing work needed for that kind of action. 
 * An action produces an observable of state reducers from the input observable.

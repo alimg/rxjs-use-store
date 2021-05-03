@@ -1,1 +1,1 @@
-import './store';
+export * from './store';
