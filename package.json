@@ -1,11 +1,14 @@
 {
   "name": "rxjs-use-store",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "RxJS store pattern with React hooks",
   "author": "Alim Gokkaya <alim.gokkaya@gmail.com>",
   "license": "MIT",
   "main": "dist/cjs/index.js",
-  "files": ["dist/**/*.js", "dist/**/*.d.ts"],
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
