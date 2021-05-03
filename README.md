@@ -1,8 +1,13 @@
 # RxJS-use-store
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+![npm](https://img.shields.io/npm/v/rxjs-use-store)
 
 A lightweight state management library for React powered by RxJS, featuring a concise type-safe interface.
+
+## Demo
+
+Try out the examples at [Codesandbox](https://codesandbox.io/embed/funny-carson-pcu29?fontsize=14&hidenavigation=1&module=%2Fexamples%2Findex.tsx&theme=dark&view=preview)
 
 ## Installation 
 
