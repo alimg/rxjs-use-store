@@ -4,9 +4,8 @@
   "description": "RxJS store pattern with React hooks",
   "author": "Alim Gokkaya <alim.gokkaya@gmail.com>",
   "license": "MIT",
-  "module": "dist/esm/index.js",
   "main": "dist/cjs/index.js",
-  "typings": "dist/cjs/index.d.ts",
+  "files": ["dist/**/*.js", "dist/**/*.d.ts"],
   "sideEffects": false,
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
