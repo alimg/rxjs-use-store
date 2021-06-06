@@ -3,6 +3,11 @@
   "version": "0.1.2",
   "description": "RxJS store pattern with React hooks",
   "author": "Alim Gokkaya <alim.gokkaya@gmail.com>",
+  "homepage": "https://github.com/alimg/rxjs-use-store",
+  "repository": {
+    "url": "https://github.com/alimg/rxjs-use-store"
+  },
+  "keywords": ["react", "rxjs", "state", "hook", "react rxjs hook", "useStore"],
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "files": [

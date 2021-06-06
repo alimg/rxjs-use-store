@@ -19,8 +19,8 @@ export function CorvidPicker(props: {onSelected?: (country: string) => void, val
   const store = makeStore(
     {} as FormState, 
     {
-      pick: ($: Observable<[string]>) => $.pipe(map(([country]) => state => ({...state, selected: country}))),
-      textChanged: ($: Observable<[ChangeEvent<HTMLInputElement>]>) => merge(
+      pick: ($: Observable<[corvid: string]>) => $.pipe(map(([corvid]) => state => ({...state, selected: corvid}))),
+      textChanged: ($: Observable<[event: ChangeEvent<HTMLInputElement>]>) => merge(
         $.pipe(
           map((([event]) => event.target.value)),
           map(currentValue => (state: FormState) => ({...state, currentValue, isSearching: true}))),

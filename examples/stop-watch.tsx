@@ -12,13 +12,14 @@ export function StopWatch() {
     initialState,
     {
       reset: ($: Observable<[]>) => $.pipe(mapTo(() => initialState)),
-      toggle: ($: Observable<[boolean]>) => $.pipe(
+      toggle: ($: Observable<[running: boolean]>) => $.pipe(
         switchMap(([running]) => running ? 
           interval(1).pipe(
             timeInterval(), 
             map(delta => (state: State) => ({...state, time: state.time + delta.interval, running: true}))) :
           of((state: State) => ({...state, running: false})))),
-      split: ($: Observable<[number]>) => $.pipe(map(([now]) => state => ({...state, splits: [...state.splits, now]})))
+      split: ($: Observable<[now: number]>) => $.pipe(
+        map(([now]) => state => ({...state, splits: [...state.splits, now]})))
     }))
 
   return <>

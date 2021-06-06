@@ -4,7 +4,7 @@ import { delay, map, mapTo, shareReplay, startWith, switchMap } from 'rxjs/opera
 import { create, act } from 'react-test-renderer'
 import * as Sinon from 'sinon'
 
-import { makeStore, useStore } from './store'
+import { defaultComposer, makeStore, useStore } from './store'
 
 
 describe('useStore basic test', () => {
@@ -60,26 +60,32 @@ describe('useStore basic test', () => {
   })
 })
 
-describe('useStore outputActions specs', () => {
+describe.each(["outputComposer", "outputAction"])('useStore %s specs', (actionType) => {
   type MyFormData = {name?: string, email?: string}
   const validateFormAsync = ({email}: MyFormData) =>
     of(/^\S+@\S+$/.test(email || "")).pipe(delay(1000))
   
   function MyFormComponent(props: {onSubmit?: (formData: MyFormData) => void}) {
     type FormState = MyFormData & {valid?: boolean}
-    const [actions, state] = useStore({
-      initialState: {} as FormState, 
-      actions: {
+    const [actions, state] = useStore(makeStore({} as FormState, {
         setName: ($: Observable<[string]>) => $.pipe(
           map(([name]) => (state: FormState) => ({...state, name}))),
         setEmail: ($: Observable<[string]>) => $.pipe(
           map(([email]) => (state: FormState) => ({...state, email})))
-      },
-      outputAction: ($) => $.pipe(
-        switchMap(state => validateFormAsync(state).pipe(
-          startWith(false),
-          map((valid) => (latest: FormState) => ({...latest, valid})))))
-    })
+      }, actionType === "outputComposer" ? {
+        outputComposer: (reducer$, initialState) => {
+          const formState$ = defaultComposer(reducer$, initialState)
+          return formState$.pipe(
+            switchMap(state => validateFormAsync(state).pipe(
+              startWith(false),
+              map((valid) => ({...state, valid})))));
+        }
+      } : {
+        outputAction: ($) => $.pipe(
+          switchMap(state => validateFormAsync(state).pipe(
+            startWith(false),
+            map((valid) => (latest: FormState) => ({...latest, valid})))))
+      }))
 
     return <>
       <div>

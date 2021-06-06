@@ -13,16 +13,15 @@ export function FormExample(props: {onSubmit: (formData: FormData) => void}) {
   const [actions, state] = useStore({
     initialState: {valid: false} as FormState, 
     actions: {
-      setName: ($: Observable<[string]>) => $.pipe(
+      setName: ($: Observable<[name: string]>) => $.pipe(
         map(([name]) => (state: FormState) => ({...state, name}))),
-      setEmail: ($: Observable<[string]>) => $.pipe(
+      setEmail: ($: Observable<[email: string]>) => $.pipe(
         map(([email]) => (state: FormState) => ({...state, email})))
     },
-    outputAction: ($) => $.pipe(
-      switchMap(state => validateFormAsync(state).pipe(
-        startWith(undefined),
-        map((valid) => (latest: FormState) => ({...latest, valid})))))
-  })
+    outputAction: ($) => $.pipe(      
+      switchMap(state => validateFormAsync(state).pipe(      
+          startWith(undefined),      
+          map((valid) => (latest: FormState) => ({...latest, valid})))))  })
   return <>
     <div>
       Name: <input onChange={e => actions.setName(e.target.value)} value={state.name}/>

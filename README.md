@@ -1,7 +1,7 @@
 # RxJS-use-store
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-![npm](https://img.shields.io/npm/v/rxjs-use-store)
+[![npm version](https://badge.fury.io/js/rxjs-use-store.svg)](https://badge.fury.io/js/rxjs-use-store)
 [![codecov](https://codecov.io/gh/alimg/rxjs-use-store/branch/main/graph/badge.svg?token=TR1SOKL2X6)](https://codecov.io/gh/alimg/rxjs-use-store)
 
 A lightweight state management library for React powered by RxJS, featuring a concise type-safe interface.
