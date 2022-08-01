@@ -16,6 +16,7 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "declaration": true,
+    "removeComments": false,
     "esModuleInterop": true
   },
   "include": ["src/**/*"],

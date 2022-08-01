@@ -31,8 +31,8 @@
     "test-ci": "NODE_ENV=test jest --no-cache --ci"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "rxjs": "^7.0.0"
+    "react": ">=17.0.0",
+    "rxjs": ">=7.0.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.22",
@@ -52,7 +52,7 @@
     "sinon": "^10.0.0",
     "ts-jest": "^26.5.5",
     "ts-loader": "^9.1.1",
-    "typescript": "^4.2.4",
+    "typescript": "^4.7.4",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
