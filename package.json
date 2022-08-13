@@ -1,6 +1,6 @@
 {
   "name": "rxjs-use-store",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "RxJS store pattern with React hooks",
   "author": "Alim Gokkaya <alim.gokkaya@gmail.com>",
   "homepage": "https://github.com/alimg/rxjs-use-store",
