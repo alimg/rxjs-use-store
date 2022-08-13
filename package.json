@@ -17,14 +17,17 @@
   ],
   "license": "MIT",
   "main": "dist/cjs/index.js",
+  "module": "./dist/esm5/index.js",
+  "es2015": "./dist/esm/index.js",
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts"
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
-    "build:esm": "rm -rf dist/esm && tsc -p tsconfig.json --module es2015 --target es5 --outDir dist/esm",
+    "build": "yarn build:esm && yarn build:esm5 && yarn build:cjs",
+    "build:esm": "rm -rf dist/esm && tsc -p tsconfig.json --module esnext --target es2015 --outDir dist/esm",
+    "build:esm5": "rm -rf dist/esm5 && tsc -p tsconfig.json --module esnext --target es5 --outDir dist/esm5",
     "build:cjs": "rm -rf dist/cjs && tsc -p tsconfig.json --module commonjs --target es5 --outDir dist/cjs",
     "start": "webpack serve -c ./examples/webpack.config.js --progress --color",
     "test": "jest",
